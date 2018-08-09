@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Comment">
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"/>
+
+    <EditText
+        android:id="@+id/write"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_toLeftOf="@id/send"
+        android:layout_alignParentBottom="true"
+        android:hint="@string/write" />
+    <ImageView
+        android:id="@+id/send"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@id/write"
+        android:layout_alignTop="@id/write"
+        android:src="@drawable/send"/>
+
+</RelativeLayout>

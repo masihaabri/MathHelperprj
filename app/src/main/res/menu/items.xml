@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/bay"
+            android:icon="@drawable/ic_currency_usd"
+            android:title="@string/bay" />
+        <item
+            android:id="@+id/devinfo"
+            android:icon="@drawable/ic_information_outline"
+            android:title="@string/devin" />
+        <item
+            android:id="@+id/teachinfo"
+            android:icon="@drawable/ic_information"
+            android:title="@string/teachin" />
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home" />
+
+</menu>

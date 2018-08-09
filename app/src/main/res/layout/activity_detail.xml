@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".Detail">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/detail_img"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@null" />
+
+            <ImageView
+                android:id="@+id/detail_like"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/likee" />
+            <ImageView
+                android:id="@+id/detail_comment"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/comment"
+                android:layout_below="@id/detail_like"
+                android:layout_marginTop="12dp"/>
+
+
+            <TextView
+                android:id="@+id/detail_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_img"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="right"
+                android:text="@string/name"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_lesson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_name"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="right"
+                android:text="@string/lesson"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_lesson"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="right"
+                android:text="@string/views"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_likes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_view"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="right"
+                android:text="@string/likes"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/detail_play"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_likes"
+                android:layout_marginTop="15dp"
+                android:background="#ffffff"
+                android:text="@string/play"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,15 +1,21 @@
 package com.a000webhostapp.mathhelperapp.www.mathhelperprj;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +54,9 @@ public class Main3Activity extends AppCompatActivity {
     Adapter_nine adapter_nine;
     FloatingActionButton search;
     FloatingActionButton share;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle mtoggle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +66,9 @@ public class Main3Activity extends AppCompatActivity {
         imc_seven_select();
         imc_eight_select();
         imc_nine_select();
+        drawerLayout.addDrawerListener(mtoggle);
+        mtoggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +103,8 @@ public class Main3Activity extends AppCompatActivity {
         list_grade_7.setLayoutManager(linearLayoutManager);
         list_grade_8.setLayoutManager(linearLayoutManager2);
         list_grade_9.setLayoutManager(linearLayoutManager3);
+        drawerLayout = findViewById(R.id.drawerl);
+        mtoggle=new ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close);
         list_grade_7.hasFixedSize();
         list_grade_8.hasFixedSize();
         list_grade_9.hasFixedSize();
@@ -600,5 +614,29 @@ public class Main3Activity extends AppCompatActivity {
         shareIntent.putExtra(Intent.EXTRA_TEXT, R.string.share + "https://mathhelperapp.000webhostapp.com");
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "some title...");
         startActivity(Intent.createChooser(shareIntent, "اشتراک گذاری ..."));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        if (mtoggle.onOptionsItemSelected(item)) {
+            return true;
+        }if(id == R.id.home){
+            Intent intent = new Intent(Main3Activity.this,Main2Activity.class);
+            startActivity(intent);
+        }if(id == R.id.devinfo){
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setCancelable(true)
+                    .setTitle(R.string.me)
+                    .setMessage(R.string.email)
+                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+            alertDialogBuilder.show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

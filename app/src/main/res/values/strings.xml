@@ -44,4 +44,9 @@
     <string name="devin">درباره سازنده</string>
     <string name="teachin">درباره مدرس</string>
     <string name="home">صفحه اول</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="me">علیرضا ابریشمی</string>
+    <string name="email">masiha.abrishami@gmail.com</string>
+    <string name="ok">باشه</string>
 </resources>

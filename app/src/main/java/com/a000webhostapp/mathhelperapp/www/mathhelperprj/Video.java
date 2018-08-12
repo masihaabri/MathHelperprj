@@ -21,6 +21,7 @@ public class Video extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
+        getSupportActionBar().hide();
         Intent i=getIntent();
         videourl=i.getStringExtra("linkk");
         videoView=findViewById(R.id.video);

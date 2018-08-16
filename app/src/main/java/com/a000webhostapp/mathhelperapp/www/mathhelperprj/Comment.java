@@ -224,6 +224,7 @@ public class Comment extends AppCompatActivity {
                         @Override
                         public void run() {
                             Toast.makeText(Comment.this, R.string.su, Toast.LENGTH_LONG).show();
+                            hash_comment.clear();
                             view_comment();
                         }
                     });

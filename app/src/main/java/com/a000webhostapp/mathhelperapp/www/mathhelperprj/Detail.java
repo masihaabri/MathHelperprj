@@ -98,9 +98,15 @@ public class Detail extends AppCompatActivity {
             public void onClick(View view) {
                 if (Liked.equals("yes")) {
                     detail_like.setImageResource(R.drawable.likee);
+                    Likes = String.valueOf(Integer.parseInt(Likes)-1);
+                    detail_likes.setText("تعداد لایک ها : " + Likes);
+                    Liked = "no";
                     like("d");
                 } else if (Liked.equals("no")) {
                     detail_like.setImageResource(R.drawable.like);
+                    Likes = String.valueOf(Integer.parseInt(Likes)+1);
+                    detail_likes.setText("تعداد لایک ها : " + Likes);
+                    Liked = "yes";
                     like("l");
                 }
             }
@@ -185,9 +191,11 @@ public class Detail extends AppCompatActivity {
                             if (status.equals("l")) {
                                 Toast.makeText(Detail.this, R.string.l, Toast.LENGTH_SHORT).show();
                                 detail_like.setImageResource(R.drawable.like);
+                                Liked = "yes";
                             } else if (status.equals("d")) {
                                 Toast.makeText(Detail.this, R.string.d, Toast.LENGTH_SHORT).show();
                                 detail_like.setImageResource(R.drawable.likee);
+                                Liked = "no";
                             }
                         }
                     });

@@ -608,7 +608,7 @@ public class Main3Activity extends AppCompatActivity {
     public void share(View view) {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, R.string.share + "https://mathhelperapp.000webhostapp.com");
+        shareIntent.putExtra(Intent.EXTRA_TEXT,  "به وب سایت ما سر بزنید! " + "https://mathhelperapp.000webhostapp.com");
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "some title...");
         startActivity(Intent.createChooser(shareIntent, "اشتراک گذاری ..."));
     }

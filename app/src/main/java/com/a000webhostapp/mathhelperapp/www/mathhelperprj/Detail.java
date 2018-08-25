@@ -98,13 +98,13 @@ public class Detail extends AppCompatActivity {
             public void onClick(View view) {
                 if (Liked.equals("yes")) {
                     detail_like.setImageResource(R.drawable.likee);
-                    Likes = String.valueOf(Integer.parseInt(Likes)-1);
+                    Likes = String.valueOf(Integer.parseInt(Likes) - 1);
                     detail_likes.setText("تعداد لایک ها : " + Likes);
                     Liked = "no";
                     like("d");
                 } else if (Liked.equals("no")) {
                     detail_like.setImageResource(R.drawable.like);
-                    Likes = String.valueOf(Integer.parseInt(Likes)+1);
+                    Likes = String.valueOf(Integer.parseInt(Likes) + 1);
                     detail_likes.setText("تعداد لایک ها : " + Likes);
                     Liked = "yes";
                     like("l");
@@ -114,18 +114,18 @@ public class Detail extends AppCompatActivity {
         detail_comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(Detail.this,Comment.class);
-                in.putExtra("liked",Liked);
-                in.putExtra("ID",ID);
-                in.putExtra("Name",Name);
-                in.putExtra("Link",Link);
-                in.putExtra("Img",Img);
-                in.putExtra("Lesonname",Lesonname);
-                in.putExtra("Model",Model);
-                in.putExtra("View",view);
-                in.putExtra("Likes",Likes);
-                in.putExtra("w",w);
-                in.putExtra("cate",cate);
+                Intent in = new Intent(Detail.this, Comment.class);
+                in.putExtra("liked", Liked);
+                in.putExtra("ID", ID);
+                in.putExtra("Name", Name);
+                in.putExtra("Link", Link);
+                in.putExtra("Img", Img);
+                in.putExtra("Lesonname", Lesonname);
+                in.putExtra("Model", Model);
+                in.putExtra("View", view);
+                in.putExtra("Likes", Likes);
+                in.putExtra("w", w);
+                in.putExtra("cate", cate);
                 startActivity(in);
             }
         });

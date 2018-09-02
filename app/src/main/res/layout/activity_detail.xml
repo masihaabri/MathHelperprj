@@ -19,7 +19,8 @@
                 android:id="@+id/detail_img"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:background="@null" />
+                android:background="@null"
+                android:layout_toRightOf="@id/detail_like"/>
 
             <ImageView
                 android:id="@+id/detail_like"

@@ -7,4 +7,5 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorTransparentWhite">#cccccc</color>
     <color name="darkgray">#6c6c6c</color>
+    <color name="nothing">@null</color>
 </resources>

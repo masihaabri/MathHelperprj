@@ -101,7 +101,7 @@ public class Main3Activity extends AppCompatActivity {
         list_grade_8.setLayoutManager(linearLayoutManager2);
         list_grade_9.setLayoutManager(linearLayoutManager3);
         drawerLayout = findViewById(R.id.drawerl);
-        mtoggle=new ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close);
+        mtoggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
         list_grade_7.hasFixedSize();
         list_grade_8.hasFixedSize();
         list_grade_9.hasFixedSize();
@@ -441,7 +441,6 @@ public class Main3Activity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(content holder, final int position) {
 
-//       Por Kardane Item Ha
 
             final HashMap<String, Object> hash_get = (HashMap<String, Object>) hash_imc_eight_select.get(position);
 
@@ -608,20 +607,22 @@ public class Main3Activity extends AppCompatActivity {
     public void share(View view) {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT,  "به وب سایت ما سر بزنید! " + "https://mathhelperapp.000webhostapp.com");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "به وب سایت ما سر بزنید! " + "https://mathhelperapp.000webhostapp.com");
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "some title...");
         startActivity(Intent.createChooser(shareIntent, "اشتراک گذاری ..."));
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id=item.getItemId();
+        int id = item.getItemId();
         if (mtoggle.onOptionsItemSelected(item)) {
             return true;
-        }if(id == R.id.home){
-            Intent intent = new Intent(Main3Activity.this,Main2Activity.class);
+        }
+        if (id == R.id.home) {
+            Intent intent = new Intent(Main3Activity.this, Main2Activity.class);
             startActivity(intent);
-        }if(id == R.id.devinfo){
+        }
+        if (id == R.id.devinfo) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
             alertDialogBuilder.setCancelable(true)
                     .setTitle(R.string.me)
